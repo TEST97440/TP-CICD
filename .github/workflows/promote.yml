@@ -1,0 +1,81 @@
+# Workflow 3 — Promotion manuelle recette → production simulée
+name: 03 - Promote to Production
+
+on:
+  workflow_dispatch:  # Déclenchement UNIQUEMENT manuel
+    inputs:
+      image_tag:
+        description: 'Tag de l image à promouvoir (ex: sha-abc1234)'
+        required: true
+        default: 'latest'
+
+jobs:
+  # ─── Étape 1 : Validation en recette ───────────────────────────────────
+  validate-recette:
+    name: Validate in Recette
+    runs-on: ubuntu-latest
+    environment: recette  # Environnement GitHub "recette"
+    permissions:
+      packages: write
+
+    steps:
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull image from GHCR
+        run: |
+          docker pull ghcr.io/${{ github.repository_owner }}/TP-CICD:${{ inputs.image_tag }}
+
+      - name: Run & test in recette
+        run: |
+          docker run -d --name recette-test \
+            -p 8083:80 \
+            ghcr.io/${{ github.repository_owner }}/TP-CICD:${{ inputs.image_tag }}
+          sleep 3
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8083)
+          echo "🔍 HTTP status en recette : $HTTP_CODE"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "❌ Échec de la validation recette"
+            exit 1
+          fi
+          echo "✅ Validation recette réussie"
+          docker stop recette-test && docker rm recette-test
+
+  # ─── Étape 2 : Promotion vers production simulée ─────────────────────
+  promote-production:
+    name: Promote to Production Simulée
+    runs-on: ubuntu-latest
+    needs: validate-recette  # Attend la validation recette
+    environment: production-simulee  # Validation manuelle requise ici
+    permissions:
+      packages: write
+
+    steps:
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Retag de la même image — AUCUN REBUILD
+      - name: Pull, retag & push as production
+        run: |
+          SOURCE="ghcr.io/${{ github.repository_owner }}/TP-CICD:${{ inputs.image_tag }}"
+          TARGET="ghcr.io/${{ github.repository_owner }}/TP-CICD:production"
+
+          echo "📥 Pull de la source : $SOURCE"
+          docker pull "$SOURCE"
+
+          echo "🏷️  Retag vers        : $TARGET"
+          docker tag "$SOURCE" "$TARGET"
+
+          echo "📤 Push en production simulée"
+          docker push "$TARGET"
+
+          echo "✅ Promotion réussie sans rebuild !"
+          echo "🔐 Digest source : $(docker inspect --format='{{index .RepoDigests 0}}' $SOURCE)"

@@ -1,0 +1,70 @@
+# Workflow 2 — Publication de l'image dans GHCR
+name: 02 - Publish to GHCR
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Permet le déclenchement manuel aussi
+
+jobs:
+  publish:
+    name: Build & Publish Docker image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # Nécessaire pour pousser dans GHCR
+
+    steps:
+      # 1. Récupération du code source
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Connexion à GHCR avec le GITHUB_TOKEN automatique
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Extraction des métadonnées (tags automatiques)
+      - name: Extract metadata (tags & labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/TP-CICD
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-        # Tag basé sur le commit SHA
+            type=ref,event=branch          # Tag = nom de la branche
+
+      # 4. Build et Push de l'image + capture du digest
+      - name: Build and push Docker image
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      # 5. Affichage du digest pour traçabilité (preuve dans les logs)
+      - name: Show image digest
+        run: |
+          echo "✅ Image publiée avec succès"
+          echo "📦 Tags    : ${{ steps.meta.outputs.tags }}"
+          echo "🔐 Digest  : ${{ steps.push.outputs.digest }}"
+          echo "📍 Registry: ghcr.io/${{ github.repository_owner }}/TP-CICD"
+
+      # 6. Sauvegarde du digest en artifact (preuve téléchargeable)
+      - name: Save digest to file
+        run: |
+          echo "${{ steps.push.outputs.digest }}" > digest.txt
+          echo "${{ steps.meta.outputs.tags }}" >> digest.txt
+
+      - name: Upload digest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-digest
+          path: digest.txt
