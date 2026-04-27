@@ -4,3 +4,10 @@ services:
     image: nginx
     ports:
       - "8083:80"
+tester:
+    image: curlimages/curl:8.12.1
+    depends_on:
+      - web
+    command: ["sh", "-c", "sleep 3 && curl -fsS http://web/ && curl -fsS http://web/version.json"]
+    networks:
+      - cicd_net

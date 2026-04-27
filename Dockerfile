@@ -7,5 +7,5 @@ LABEL org.opencontainers.image.source="https://github.com/TEST97440/TP-CICD"
 COPY site/ /usr/share/nginx/html/
 RUN chmod -R 755 /usr/share/nginx/html
 
-EXPOSE 83
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -q -O - http://localhost:8083/ >/dev/null || exit 1
+EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -q -O - http://127.0.0.1/ >/dev/null || exit 1
