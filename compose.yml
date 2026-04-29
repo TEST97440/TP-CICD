@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    image: projet-cicd-nginx:local
+    expose:
+      - "80"
+    networks:
+      - cicd_net
+
+  tester:
+    image: curlimages/curl:8.12.1
+    depends_on:
+      - web
+    command: ["sh", "-c", "sleep 3 && curl -fsS http://web/ && curl -fsS http://web/version.json"]
+    networks:
+      - cicd_net
+
+networks:
+  cicd_net:
+    driver: bridge
