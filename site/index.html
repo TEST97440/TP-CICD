@@ -5,31 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catal-Log - Projet CICD</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f7fb; color: #1f2d3d; }
-    main { max-width: 900px; margin: 48px auto; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
-    h1 { color: #1f4e79; margin-top: 0; }
-    .badge { display: inline-block; padding: 6px 10px; background: #e8f2fb; border-radius: 8px; font-weight: bold; }
-    ul { line-height: 1.7; }
-    footer { margin-top: 32px; font-size: .9rem; color: #5d6d7e; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#f4f7fb;color:#1f2d3d}
+    .topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 32px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:20px;font-weight:700}.logo span{color:#185FA5}
+    .badge{font-size:11px;background:#E6F1FB;color:#0C447C;padding:4px 12px;border-radius:20px;font-weight:600}
+    .hero{background:#fff;border-bottom:1px solid #e2e8f0;padding:40px 32px 32px}
+    .hero-label{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .hero h1{font-size:28px;font-weight:700;margin-bottom:10px}
+    .hero p{font-size:15px;color:#475569;line-height:1.7;max-width:580px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px 32px}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+    .card-label{font-size:12px;color:#64748b;margin-bottom:6px}
+    .card-val{font-size:20px;font-weight:700}
+    .ok{color:#0F6E56}.info{color:#185FA5}
+    .section{padding:0 32px 28px}
+    .section h2{font-size:15px;font-weight:600;margin-bottom:12px;color:#475569}
+    .pipeline{display:flex;align-items:center;gap:0}
+    .step{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:12px 10px;font-size:12px;flex:1;text-align:center}
+    .step .s-label{color:#64748b;font-size:11px;margin-bottom:3px}
+    .step .s-status{font-weight:700;color:#0F6E56}
+    .arrow{color:#94a3b8;padding:0 4px;flex-shrink:0}
+    .tests{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+    .test-row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid #f1f5f9;font-size:13px}
+    .test-row:last-child{border-bottom:none}
+    .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:#1D9E75}
+    .test-name{flex:1}
+    .test-result{color:#64748b;font-size:12px}
+    .footer{padding:16px 32px;font-size:12px;color:#64748b;border-top:1px solid #e2e8f0;margin-top:8px}
   </style>
 </head>
 <body>
-  <main>
-    <p class="badge">Projet CICD - EC06</p>
-    <h1>Site statique Catal-Log</h1>
-    <p>Cette page est servie par Nginx dans une image Docker construite, testée, publiée et promue avec GitHub Actions.</p>
-      <li>Conteneurisation avec Dockerfile.</li>
-      <li>Tests automatisés dans GitHub Actions.</li>
-      <li>Publication dans GitHub Container Registry.</li>
-      <li>Promotion simulée sans reconstruire l'image.</li>
-    </ul>
-    <footer>Auteur : ASRC-10 – EC06</footer>
-  </main>
+
+<div class="topbar">
+  <div class="logo">Catal<span>-Log</span></div>
+  <span class="badge">Projet CICD · EC06 · ASRC</span>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Site statique · Nginx · Docker</div>
+  <h1>Déploiement automatisé CI/CD</h1>
+  <p>Cette page est construite, testée, publiée et promue via GitHub Actions et GitHub Container Registry, sans opération manuelle répétitive.</p>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-label">Version</div>
+    <div class="card-val info">0.1.0</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Auteur</div>
+    <div class="card-val" style="font-size:15px">ASRC-10</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Build CI</div>
+    <div class="card-val ok">Réussi</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Image GHCR</div>
+    <div class="card-val ok">Publiée</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Pipeline CI/CD</h2>
+  <div class="pipeline">
+    <div class="step"><div class="s-label">01 · CI</div><div class="s-status">Build + Test</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="s-label">02 · GHCR</div><div class="s-status">Publication</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="s-label">03 · Recette</div><div class="s-status">Validation</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="s-label">03 · Prod</div><div class="s-status">Promotion</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Résultats des tests automatisés</h2>
+  <div class="tests">
+    <div class="test-row"><div class="dot"></div><div class="test-name">Fichiers requis présents (Dockerfile, compose.yml, index.html, version.json)</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Syntaxe Docker Compose valide</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Build image Docker réussi</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Test HTTP sur / — réponse 200</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Test HTTP sur /version.json — réponse 200</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Contenu HTML vérifié — "Projet CICD" présent</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Publication image GHCR avec tag sha- et latest</div><div class="test-result">OK</div></div>
+    <div class="test-row"><div class="dot"></div><div class="test-name">Promotion production-simulee sans rebuild</div><div class="test-result">OK</div></div>
+  </div>
+</div>
+
+<div class="footer">
+  Auteur : ASRC-10 · EC06 ASRC · Image : ghcr.io/TEST97440/tp-cicd · Tag : latest
+</div>
+
 </body>
 </html>
-
-    <footer>À personnaliser par l’étudiant : nom, version, choix techniques et preuves.</footer>
-  </main>
-</body>
-</html>
-
