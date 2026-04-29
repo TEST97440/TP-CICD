@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 services:
   web:
     build: .
@@ -8,13 +9,26 @@ services:
       - cicd_net
 
   tester:
+=======
+version: "3"
+services:
+  web:
+    image: nginx
+    ports:
+      - "8083:80"
+tester:
+>>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956
     image: curlimages/curl:8.12.1
     depends_on:
       - web
     command: ["sh", "-c", "sleep 3 && curl -fsS http://web/ && curl -fsS http://web/version.json"]
     networks:
+<<<<<<< HEAD
       - cicd_net
 
 networks:
   cicd_net:
     driver: bridge
+=======
+      - cicd_net
+>>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956

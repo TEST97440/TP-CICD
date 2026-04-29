@@ -81,4 +81,8 @@ jobs:
           echo "## Promotion production-simulee" >> $GITHUB_STEP_SUMMARY
           echo "Source : ghcr.io/${{ env.IMAGE_NAME }}:${{ inputs.source_tag }}" >> $GITHUB_STEP_SUMMARY
           echo "Cible : ghcr.io/${{ env.IMAGE_NAME }}:production-simulee" >> $GITHUB_STEP_SUMMARY
+<<<<<<< HEAD
           echo "Mode : promotion sans rebuild" >> $GITHUB_STEP_SUMMARY
+=======
+          echo "Mode : promotion sans rebuild" >> $GITHUB_STEP_SUMMARY
+>>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956
