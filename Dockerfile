@@ -1,10 +1,6 @@
 FROM nginx:1.27-alpine
 
-<<<<<<< HEAD
-LABEL org.opencontainers.image.title="Catal-Log"
-=======
 LABEL org.opencontainers.image.title="Projet CICD - Catal-Log"
->>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956
 LABEL org.opencontainers.image.description="Image Nginx servant un site statique pour l'évaluation EC06"
 LABEL org.opencontainers.image.source="https://github.com/TEST97440/TP-CICD"
 
@@ -12,8 +8,4 @@ COPY site/ /usr/share/nginx/html/
 RUN chmod -R 755 /usr/share/nginx/html
 
 EXPOSE 80
-<<<<<<< HEAD
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -q -O - http://localhost:8083/ >/dev/null || exit 1
-=======
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -q -O - http://127.0.0.1/ >/dev/null || exit 1
->>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956
