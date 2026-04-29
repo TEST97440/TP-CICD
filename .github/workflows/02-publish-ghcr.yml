@@ -50,8 +50,5 @@ jobs:
           echo "Image : ghcr.io/${{ env.IMAGE_NAME }}" >> $GITHUB_STEP_SUMMARY
           echo "Tags :" >> $GITHUB_STEP_SUMMARY
           echo '${{ steps.meta.outputs.tags }}' >> $GITHUB_STEP_SUMMARY
-<<<<<<< HEAD
           echo "Digest : ${{ steps.build.outputs.digest }}" >> $GITHUB_STEP_SUMMARY
-=======
-          echo "Digest : ${{ steps.build.outputs.digest }}" >> $GITHUB_STEP_SUMMARY
->>>>>>> 0ce1ac69dc44ee3682aacac2401ae79c67a59956
+
