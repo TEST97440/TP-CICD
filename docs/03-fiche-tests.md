@@ -3,13 +3,13 @@
 ## Test automatisé GitHub Actions
 
 - Workflow concerné : 01-ci.yml
-- Lien vers le run réussi : A compléter
+- Lien vers le run réussi : Commit 571cdf3
 - Ce qui est testé : Build Docker + test HTTP sur / et /version.json
-- Résultat : Succès
+- Résultat : OK en 18s
 
 ## Test local Docker ou Docker Compose
 
-Renseigner l'une des deux situations.
+Test local : conteneur Catal-Log actif sur port 8083, image site-asrc10-nginx
 
 ### Situation A - Test réalisé
 

@@ -14,4 +14,4 @@ La promotion doit réutiliser une image existante. Elle ne doit pas reconstruire
 
 ## Preuve
 
-Indiquer ici l'élément qui prouve que la promotion s'est faite sans rebuild.
+l'image a été docker pull puis docker tag puis docker push, pas de docker build
