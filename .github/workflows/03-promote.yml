@@ -2,11 +2,6 @@ name: 03 - Promotion recette vers production-simulee
 
 on:
   workflow_dispatch:
-    inputs:
-      source_tag:
-        description: "Tag GHCR à promouvoir, par exemple latest ou sha-abcdef0"
-        required: true
-        default: "latest"
 
 permissions:
   contents: read
