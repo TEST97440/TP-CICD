@@ -121,21 +121,36 @@ et une fenêtre de déploiement planifiée.
 - Dépôt GitHub : https://github.com/TEST97440/TP-CICD
 - Image GHCR : https://github.com/TEST97440/TP-CICD/pkgs/container/tp-cicd
 - Digest : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
-- Run CI réussi (01-ci.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
-- Run publication GHCR (02-publish-ghcr.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
-- Run promotion (03-promote.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
+- Run CI réussi (01-ci.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585002134
+- Run publication GHCR (02-publish-ghcr.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585002065
+- Run promotion (03-promote.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
 
-📸 [Capture du run 01-ci.yml avec tous les steps réussis]
-📸 [Capture du run 02-publish-ghcr.yml avec le digest affiché]
-📸 [Capture de la page GHCR avec les tags sha-, latest, production-simulee]
-📸 [Capture du run 03-promote.yml avec les deux jobs réussis]
+<img width="882" height="860" alt="image" src="https://github.com/user-attachments/assets/e6e1f6e3-0fcd-4a66-963b-4daaa4d3c550" />
+
+<img width="842" height="835" alt="image" src="https://github.com/user-attachments/assets/1f0f31b1-d0c5-41a2-86f4-f537dc0869f4" />
+
+<img width="1242" height="565" alt="image" src="https://github.com/user-attachments/assets/ecd2b394-6de3-4854-a7cc-6987ca973535" />
+
+<img width="2172" height="255" alt="ChatGPT Image 2 juil  2026, 15_59_22" src="https://github.com/user-attachments/assets/0fb69714-c008-4fbf-89b1-38a08c7e3a1c" />
 
 ## 8. Difficultés et apprentissages
 
-[À rédiger avec tes propres mots. C'est la seule section que le formateur utilise
-pour vérifier que tu comprends ce que tu as fait. Quelques pistes :
+Ce TP a été très intéressant et différent de Jenkins que j'avais déjà utilisé
+auparavant. GitHub Actions est plus simple et plus rapide à mettre en place : tout
+est directement intégré au dépôt, sans serveur à administrer ni plugin à configurer
+séparément.
 
-- Qu'est-ce qui n'a pas fonctionné du premier coup ?
-- Comment tu as compris la différence entre tag et digest ?
-- Qu'est-ce que la promotion sans rebuild t'a appris sur la traçabilité ?
-- Qu'est-ce que tu ferais différemment si tu recommençais ?]
+Quelques erreurs se sont produites lors des premiers builds, notamment au niveau
+de la configuration des workflows, mais après corrections le pipeline a fonctionné
+correctement de bout en bout.
+
+Sur la différence entre tag et digest, j'ai compris que le tag sert d'indicateur
+lisible pour identifier directement une version, comme par exemple `latest` pour
+la dernière version ou `sha-785ef17` pour un commit précis. Le digest quant à lui
+est une empreinte générée automatiquement qui identifie de manière unique le contenu
+de l'image, indépendamment de son nom ou de son tag.
+
+La promotion sans rebuild m'a montré l'importance de la traçabilité : en gardant
+le même digest entre recette et production-simulee, on a la certitude que l'image
+déployée est exactement celle qui a été testée, sans aucune modification entre les
+deux étapes.
