@@ -5,10 +5,10 @@
 - Workflow concerné : 03-promote.yml
 - Environnement GitHub : recette
 - Tag source validé : latest
-- Digest observé : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
-- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
+- Digest observé : sha256:5354a619e3a8eb29e1b228f8932498e13c7f8b161e4cebb7de860d955312b9d4
+- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28609517968
 
-<img width="1312" height="517" alt="image" src="https://github.com/user-attachments/assets/4f4922d4-7c41-45ee-aa62-763a49630c6a" />
+<img width="1265" height="540" alt="image" src="https://github.com/user-attachments/assets/5c085b1a-e9d4-4ed0-9d9d-712d238bcfc5" />
 
 
 ## Résultat
@@ -29,7 +29,8 @@ Lors de l'exécution du job `validate-recette` dans le workflow 03-promote.yml :
 La validation recette s'est terminée avec succès, ce qui a débloqué le job suivant
 `promote-production-simulee`.
 
-<img width="1442" height="602" alt="image" src="https://github.com/user-attachments/assets/01737737-e897-4051-9e69-007b1ea70a75" />
+<img width="906" height="583" alt="image" src="https://github.com/user-attachments/assets/c59c2fad-bc8f-47c0-9ef6-3c9c1a049dbe" />
 
-<img width="1395" height="96" alt="image" src="https://github.com/user-attachments/assets/dbbc313f-96e8-4c67-9f1b-60e4bf127180" />
+
+<img width="1385" height="98" alt="image" src="https://github.com/user-attachments/assets/64affb7d-6ba0-4a5e-ba01-702654eb64fd" />
 
