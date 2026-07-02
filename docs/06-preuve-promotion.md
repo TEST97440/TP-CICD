@@ -6,10 +6,9 @@
 - Environnement GitHub : production-simulee
 - Tag source : latest
 - Tag cible : production-simulee
-- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
+- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
 
-📸 [Capture du job promote-production-simulee avec les steps réussis]
-📸 [Capture de la page GHCR montrant le tag production-simulee apparu]
+📸 [Capture de l'approbation manuelle promote-production-simulee ]
 
 ## Point essentiel
 
@@ -39,3 +38,8 @@ Après la promotion, les tags `latest` et `production-simulee` pointent vers le 
 digest sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7.
 Aucune recompilation, aucun rebuild : ce qui a été testé est exactement ce qui est
 en production-simulee.
+
+<img width="1391" height="178" alt="image" src="https://github.com/user-attachments/assets/503df03a-0510-4c1d-9682-573ee5fa6d34" />
+<img width="766" height="337" alt="image" src="https://github.com/user-attachments/assets/0d4ae6d4-14f2-437e-ba81-ee2cbabff743" />
+
+<img width="2172" height="255" alt="ChatGPT Image 2 juil  2026, 15_59_22" src="https://github.com/user-attachments/assets/4c230691-a74b-44ab-b880-c27f37321922" />
