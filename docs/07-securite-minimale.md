@@ -12,6 +12,8 @@ qui peuvent être trop larges et exposer le projet en cas de compromission d'un 
   dépôt et publie l'image dans GHCR. Il n'a pas accès en écriture au code source.
 - **03-promote.yml** : `contents: read, packages: write` — le workflow tire et pousse
   des tags dans GHCR. Il n'a pas accès en écriture au code source.
+  
+<img width="375" height="271" alt="image" src="https://github.com/user-attachments/assets/35661564-8031-4f04-a6ad-dcc7000ad547" />
 
 ## Gestion des secrets
 
@@ -36,6 +38,9 @@ ou dans un coffre de secrets dédié (HashiCorp Vault, AWS Secrets Manager) :
 Écrire un secret dans un Dockerfile est particulièrement dangereux : même supprimé
 dans un layer suivant, il reste lisible via `docker history`. Les secrets doivent
 être injectés au runtime, jamais au moment du build.
+
+<img width="1388" height="261" alt="image" src="https://github.com/user-attachments/assets/96524989-d1cd-4196-87f8-2bd8f3688d57" />
+
 
 ## Rollback
 
@@ -92,3 +97,6 @@ manuelle obligatoire dans GitHub (Settings → Environments → Required reviewe
 workflow 03-promote.yml ne progresse vers le job `promote-production-simulee` qu'après
 validation humaine. En production réelle, cette validation serait renforcée par une
 checklist formelle, un ticket de changement et une fenêtre de déploiement définie.
+
+<img width="1192" height="623" alt="image" src="https://github.com/user-attachments/assets/3c32f468-7f86-4f2a-b546-96c83cec7926" />
+
