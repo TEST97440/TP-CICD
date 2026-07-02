@@ -7,7 +7,11 @@
 - Digest : sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7
 - Lien GHCR : https://github.com/TEST97440/TP-CICD/pkgs/container/tp-cicd
 
-CAPTURE:
+<img width="1907" height="886" alt="image" src="https://github.com/user-attachments/assets/3efc6e9b-188f-44ca-a053-0dc21474b6e7" />
+
+<img width="1427" height="762" alt="image" src="https://github.com/user-attachments/assets/da132dc1-7bee-4d80-a0e7-a269f72d57bb" />
+
+<img width="1427" height="762" alt="image" src="https://github.com/user-attachments/assets/c84b9377-0be4-4c82-b212-81ece24fdf26" />
 
 
 ## Explication
