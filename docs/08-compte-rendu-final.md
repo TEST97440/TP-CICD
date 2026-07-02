@@ -120,7 +120,7 @@ et une fenêtre de déploiement planifiée.
 
 - Dépôt GitHub : https://github.com/TEST97440/TP-CICD
 - Image GHCR : https://github.com/TEST97440/TP-CICD/pkgs/container/tp-cicd
-- Digest : sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7
+- Digest : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
 - Run CI réussi (01-ci.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
 - Run publication GHCR (02-publish-ghcr.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
 - Run promotion (03-promote.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
