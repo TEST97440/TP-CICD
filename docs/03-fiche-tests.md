@@ -3,7 +3,7 @@
 ## Test automatisé GitHub Actions
 
 - Workflow concerné : 01-ci.yml
-- Lien vers le run réussi : https://github.com/TEST97440/TP-CICD/actions (commit 571cdf3)
+- Lien vers le run réussi : https://github.com/TEST97440/TP-CICD/actions (commit 50653d5)
 - Ce qui est testé : Build Docker + test HTTP sur / et /version.json
 - Résultat : OK en 18s
 
