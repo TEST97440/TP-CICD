@@ -35,7 +35,7 @@ docker push ghcr.io/test97440/tp-cicd:production-simulee
 ```
 
 Après la promotion, les tags `latest` et `production-simulee` pointent vers le même
-digest sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7.
+digest sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8.
 Aucune recompilation, aucun rebuild : ce qui a été testé est exactement ce qui est
 en production-simulee.
 
