@@ -5,9 +5,26 @@
 - Workflow concerné : 03-promote.yml
 - Environnement GitHub : recette
 - Tag source validé : latest
-- Digest observé : A compléter
-- Lien du run : A compléter
+- Digest observé : sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7
+- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/XXXXXXXXX
+
+CAPTURE:
+
 
 ## Résultat
 
-Décrire le résultat du test HTTP réalisé pendant la validation recette.
+Lors de l'exécution du job `validate-recette` dans le workflow 03-promote.yml :
+
+1. L'image `ghcr.io/test97440/tp-cicd:latest` a été téléchargée depuis GHCR via
+   `docker pull`, sans rebuilder l'image.
+2. Un conteneur a été démarré sur le port 8083.
+3. Le workflow a attendu que le service réponde en boucle (jusqu'à 10 tentatives
+   espacées de 2 secondes).
+4. Le test HTTP sur `http://127.0.0.1:8083/` a retourné une réponse valide.
+5. Le test sur `http://127.0.0.1:8083/version.json` a retourné le contenu JSON attendu.
+6. Le digest de l'image a été affiché dans le résumé du job pour confirmer l'identité
+   de l'artefact testé.
+7. Le conteneur a été supprimé en fin de job via le step nettoyage (`if: always()`).
+
+La validation recette s'est terminée avec succès, ce qui a débloqué le job suivant
+`promote-production-simulee`.
