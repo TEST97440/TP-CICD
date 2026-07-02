@@ -51,10 +51,10 @@ Procédure de rollback :
 
 ```bash
 # Identifier le tag sha- de l'ancienne version stable
-docker pull ghcr.io/test97440/tp-cicd:sha-abc1234
+docker pull ghcr.io/test97440/tp-cicd:sha-785ef17
 
 # Re-tagger vers production-simulee sans rebuild
-docker tag ghcr.io/test97440/tp-cicd:sha-abc1234 \
+docker tag ghcr.io/test97440/tp-cicd:sha-785ef17 \
            ghcr.io/test97440/tp-cicd:production-simulee
 
 # Pousser le nouveau tag dans GHCR
