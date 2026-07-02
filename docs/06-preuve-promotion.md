@@ -8,7 +8,7 @@
 - Tag cible : production-simulee
 - Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28609517968
 
-📸 [Capture de l'approbation manuelle promote-production-simulee ]
+<img width="1636" height="961" alt="image" src="https://github.com/user-attachments/assets/b4aa638a-9821-4f34-bb3f-0981a45b2309" />
 
 ## Point essentiel
 
