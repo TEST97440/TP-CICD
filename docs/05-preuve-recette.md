@@ -5,7 +5,7 @@
 - Workflow concerné : 03-promote.yml
 - Environnement GitHub : recette
 - Tag source validé : latest
-- Digest observé : sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7
+- Digest observé : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
 - Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
 
 <img width="1312" height="517" alt="image" src="https://github.com/user-attachments/assets/4f4922d4-7c41-45ee-aa62-763a49630c6a" />
