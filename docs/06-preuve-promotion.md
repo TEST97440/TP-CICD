@@ -6,7 +6,7 @@
 - Environnement GitHub : production-simulee
 - Tag source : latest
 - Tag cible : production-simulee
-- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
+- Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28609517968
 
 📸 [Capture de l'approbation manuelle promote-production-simulee ]
 
@@ -35,11 +35,13 @@ docker push ghcr.io/test97440/tp-cicd:production-simulee
 ```
 
 Après la promotion, les tags `latest` et `production-simulee` pointent vers le même
-digest sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8.
+digest sha256:5354a619e3a8eb29e1b228f8932498e13c7f8b161e4cebb7de860d955312b9d4
 Aucune recompilation, aucun rebuild : ce qui a été testé est exactement ce qui est
 en production-simulee.
 
-<img width="1391" height="178" alt="image" src="https://github.com/user-attachments/assets/503df03a-0510-4c1d-9682-573ee5fa6d34" />
-<img width="766" height="337" alt="image" src="https://github.com/user-attachments/assets/0d4ae6d4-14f2-437e-ba81-ee2cbabff743" />
+<img width="1382" height="370" alt="image" src="https://github.com/user-attachments/assets/d3b3a01a-06ac-4554-b164-39a2d676872c" />
 
-<img width="2172" height="255" alt="ChatGPT Image 2 juil  2026, 15_59_22" src="https://github.com/user-attachments/assets/4c230691-a74b-44ab-b880-c27f37321922" />
+<img width="1372" height="332" alt="image" src="https://github.com/user-attachments/assets/bf4f8f45-ffa2-47a7-8903-4f54ee6aa267" />
+
+<img width="2170" height="255" alt="image" src="https://github.com/user-attachments/assets/a6f60386-9e3f-4103-82b3-4a706437ec3d" />
+
