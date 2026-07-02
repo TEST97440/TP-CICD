@@ -120,18 +120,19 @@ et une fenêtre de déploiement planifiée.
 
 * Dépôt GitHub : https://github.com/TEST97440/TP-CICD
 * Image GHCR : https://github.com/TEST97440/TP-CICD/pkgs/container/tp-cicd
-* Digest : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
-* Run CI réussi (01-ci.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585002134
-* Run publication GHCR (02-publish-ghcr.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585002065
-* Run promotion (03-promote.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28585192882
+* Digest : sha256:5354a619e3a8eb29e1b228f8932498e13c7f8b161e4cebb7de860d955312b9d4
+* Run CI réussi (01-ci.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28609403884
+* Run publication GHCR (02-publish-ghcr.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28609403704/job/84837719418
+* Run promotion (03-promote.yml) : https://github.com/TEST97440/TP-CICD/actions/runs/28609517968
 
-<img width="882" height="860" alt="image" src="https://github.com/user-attachments/assets/e6e1f6e3-0fcd-4a66-963b-4daaa4d3c550" />
+<img width="847" height="873" alt="image" src="https://github.com/user-attachments/assets/a13c6327-cb94-4974-a2d4-fd1fd060f888" />
 
-<img width="842" height="835" alt="image" src="https://github.com/user-attachments/assets/1f0f31b1-d0c5-41a2-86f4-f537dc0869f4" />
+<img width="912" height="897" alt="image" src="https://github.com/user-attachments/assets/68c4e6fa-d0f9-4cf4-81ff-e2996e22dae1" />
 
-<img width="1242" height="565" alt="image" src="https://github.com/user-attachments/assets/ecd2b394-6de3-4854-a7cc-6987ca973535" />
+<img width="1265" height="540" alt="image" src="https://github.com/user-attachments/assets/14e77432-8306-453d-a234-e604b7ada758" />
 
-<img width="2172" height="255" alt="ChatGPT Image 2 juil  2026, 15\_59\_22" src="https://github.com/user-attachments/assets/0fb69714-c008-4fbf-89b1-38a08c7e3a1c" />
+<img width="2170" height="255" alt="image" src="https://github.com/user-attachments/assets/cd477c7a-63a2-4381-8402-5b6b0de405d1" />
+
 
 ## 8\. Difficultés et apprentissages
 
