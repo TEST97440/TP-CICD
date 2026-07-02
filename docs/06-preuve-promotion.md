@@ -8,7 +8,8 @@
 - Tag cible : production-simulee
 - Lien du run : https://github.com/TEST97440/TP-CICD/actions/runs/28609517968
 
-<img width="1636" height="961" alt="image" src="https://github.com/user-attachments/assets/b4aa638a-9821-4f34-bb3f-0981a45b2309" />
+<img width="1637" height="961" alt="image" src="https://github.com/user-attachments/assets/555a7da2-0e3c-42cd-bd3e-845241c5e801" />
+
 
 ## Point essentiel
 
