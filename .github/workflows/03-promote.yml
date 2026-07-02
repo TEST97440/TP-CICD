@@ -2,6 +2,10 @@ name: 03 - Promotion recette vers production-simulee
 
 on:
   workflow_dispatch:
+     inputs:
+      image_tag:
+        description: 'Tag SHA de l''image à promouvoir (ex: sha-abcdef...)'
+        required: true
 
 permissions:
   contents: read
