@@ -3,8 +3,8 @@
 ## Image publiée
 
 - Nom de l'image : ghcr.io/test97440/tp-cicd
-- Tags : sha-cee92d4, latest
-- Digest : sha256:2fe42ea3b041c63dedb2558dcc5d40dff87935cd1b35e482d78707ed81f884e7
+- Tags : sha-95f14b1, latest
+- Digest : sha256:efe803e5319212a4957c9506f17dc56deccbe3c51a5e85a759c4737d3b2261a8
 - Lien GHCR : https://github.com/TEST97440/TP-CICD/pkgs/container/tp-cicd
 
 <img width="1907" height="886" alt="image" src="https://github.com/user-attachments/assets/3efc6e9b-188f-44ca-a053-0dc21474b6e7" />
