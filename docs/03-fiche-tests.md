@@ -7,6 +7,8 @@
 - Ce qui est testé : Build Docker + test HTTP sur / et /version.json
 - Résultat : OK en 18s
 
+<img width="1441" height="301" alt="image" src="https://github.com/user-attachments/assets/8b641748-3e25-4a3d-80e8-45d75707b8f0" />
+
 Le workflow exécute dans l'ordre :
 1. Vérification de la présence des fichiers attendus (Dockerfile, compose.yml,
    site/index.html, site/version.json, docs/08-compte-rendu-final.md).
@@ -41,6 +43,12 @@ http://localhost:8083, réponse HTTP 200 sur / et sur /version.json.
 Le service tester du compose.yml a également validé les deux URLs automatiquement
 en exécutant `curl -fsS http://web/` et `curl -fsS http://web/version.json` depuis
 le réseau interne cicd_net, sans passer par l'hôte.
+
+
+<img width="777" height="592" alt="image" src="https://github.com/user-attachments/assets/d709b68c-e06e-4761-a6d0-818a73ce592a" />
+
+<img width="1470" height="193" alt="image" src="https://github.com/user-attachments/assets/51eef4b5-63ed-44a9-b52c-2d5db0823b96" />
+
 
 ## Simulation de scaling
 
